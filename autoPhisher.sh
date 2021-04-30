@@ -12,7 +12,7 @@ debconf-set-selections <<< "postfix postfix/mailname string $hostname"
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 apt-get install --assume-yes postfix 
 sed -i "s/myhostname = .*/myhostname = $hostname/g" /etc/postfix/main.cf
-apt-get install opendkim opendkim-tools mailutils
+apt-get install --assume-yes opendkim opendkim-tools mailutils
 
 #Things to lower your spam rating
 
